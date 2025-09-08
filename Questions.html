@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Questions Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #042f2e;
+            color: #e0f2f1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .container {
+            background-color: #0d9488;
+            padding: 2.5rem;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 28rem;
+            text-align: center;
+        }
+        .form-input {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0.5rem;
+            border: 1px solid #14b8a6;
+            background-color: #0f766e;
+            color: #ffffff;
+            font-size: 1rem;
+        }
+        .form-input::placeholder {
+            color: #a5f3fc;
+        }
+        .submit-btn {
+            background-color: #14b8a6;
+            color: #0e7490;
+            padding: 0.75rem 2rem;
+            border-radius: 0.75rem;
+            font-weight: bold;
+            transition: background-color 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #0d9488;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="form-container">
+        <h1 class="text-3xl font-bold mb-4">Questions for the Meeting</h1>
+        <p class="text-sm text-gray-200 mb-6">Got a question you want answered? Submit it here!</p>
+
+        <form action="https://formspree.io/f/xpwjkevr" method="POST" id="question-form">
+            <label for="name" class="block text-left mb-1">Your Name</label>
+            <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
+
+            <label for="question" class="block text-left mb-1">Your Question</label>
+            <textarea id="question" name="question" rows="4" class="form-input" placeholder="Enter your question here..." required></textarea>
+
+            <button type="submit" class="submit-btn w-full">Submit Question</button>
+        </form>
+    </div>
+</body>
+</html>
