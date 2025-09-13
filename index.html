@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Team Questions Form</title>
+    <title>Share Your Class Timings</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
@@ -21,7 +21,7 @@
             border-radius: 1.5rem;
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
             width: 100%;
-            max-width: 28rem;
+            max-width: 32rem;
             text-align: center;
         }
         .form-input {
@@ -49,23 +49,142 @@
         .submit-btn:hover {
             background-color: #0d9488;
         }
+        .time-btn {
+            background-color: #0f766e;
+            color: #a5f3fc;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.5rem;
+            border: 1px solid #14b8a6;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            margin: 0.25rem;
+            font-size: 0.875rem;
+        }
+        .time-btn.active {
+            background-color: #14b8a6;
+            color: #042f2e;
+        }
     </style>
 </head>
 <body>
 
     <div class="container" id="form-container">
-        <h1 class="text-3xl font-bold mb-4">Questions for the Meeting</h1>
-        <p class="text-sm text-gray-200 mb-6">Got a question you want answered? Submit it here!</p>
+        <h1 class="text-3xl font-bold mb-4">Share Your Class Timings</h1>
+        <p class="text-sm text-gray-200 mb-6">Click the hours you have a class.</p>
 
-        <form action="https://formspree.io/f/xpwjkevr" method="POST" id="question-form">
+        <form action="https://formspree.io/f/xdkljbvn" method="POST" id="timings-form">
             <label for="name" class="block text-left mb-1">Your Name</label>
             <input type="text" id="name" name="name" class="form-input" placeholder="Your Name" required>
 
-            <label for="question" class="block text-left mb-1">Your Question</label>
-            <textarea id="question" name="question" rows="4" class="form-input" placeholder="Enter your question here..." required></textarea>
+            <label class="block text-left mb-1 mt-4">Monday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="monday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="monday_times" id="monday_times">
 
-            <button type="submit" class="submit-btn w-full">Submit Question</button>
+            <label class="block text-left mb-1 mt-4">Tuesday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="tuesday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="tuesday_times" id="tuesday_times">
+
+            <label class="block text-left mb-1 mt-4">Wednesday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="wednesday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="wednesday_times" id="wednesday_times">
+
+            <label class="block text-left mb-1 mt-4">Thursday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="thursday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="thursday_times" id="thursday_times">
+
+            <label class="block text-left mb-1 mt-4">Friday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="friday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="friday_times" id="friday_times">
+
+            <label class="block text-left mb-1 mt-4">Saturday</label>
+            <div class="flex flex-wrap gap-2 mb-4" data-day="saturday">
+                <button type="button" class="time-btn" data-time="9am-10am">9 AM - 10 AM</button>
+                <button type="button" class="time-btn" data-time="10am-11am">10 AM - 11 AM</button>
+                <button type="button" class="time-btn" data-time="11am-12pm">11 AM - 12 PM</button>
+                <button type="button" class="time-btn" data-time="12pm-1pm">12 PM - 1 PM</button>
+                <button type="button" class="time-btn" data-time="1pm-2pm">1 PM - 2 PM</button>
+                <button type="button" class="time-btn" data-time="2pm-3pm">2 PM - 3 PM</button>
+                <button type="button" class="time-btn" data-time="3pm-4pm">3 PM - 4 PM</button>
+                <button type="button" class="time-btn" data-time="4pm-5pm">4 PM - 5 PM</button>
+                <button type="button" class="time-btn" data-time="5pm-6pm">5 PM - 6 PM</button>
+            </div>
+            <input type="hidden" name="saturday_times" id="saturday_times">
+
+            <button type="submit" class="submit-btn w-full mt-4">Submit Timings</button>
         </form>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const timeContainers = document.querySelectorAll('[data-day]');
+
+            timeContainers.forEach(container => {
+                container.addEventListener('click', (event) => {
+                    const button = event.target.closest('.time-btn');
+                    if (button) {
+                        button.classList.toggle('active');
+                        updateHiddenInput(container.dataset.day);
+                    }
+                });
+            });
+
+            function updateHiddenInput(day) {
+                const container = document.querySelector(`[data-day="${day}"]`);
+                const activeTimes = Array.from(container.querySelectorAll('.time-btn.active'))
+                                         .map(btn => btn.dataset.time);
+                const hiddenInput = document.getElementById(`${day}_times`);
+                hiddenInput.value = activeTimes.join(', ');
+            }
+        });
+    </script>
 </body>
 </html>
